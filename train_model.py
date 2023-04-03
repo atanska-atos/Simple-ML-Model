@@ -18,4 +18,4 @@ def create_and_train_model(dataset, ankle):
 
     approximate_neck = fitted_model.predict(ankle)
 
-    return approximate_neck
+    return approximate_neck,fitted_model
