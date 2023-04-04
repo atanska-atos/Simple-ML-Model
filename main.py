@@ -22,11 +22,10 @@ value = int(input("Please, text value of ankle: "))
 ankle = {'Ankle': [float(value)]}
 
 # use a model
-approximate_neck = train_model.create_and_train_model(dataset, ankle)[0]
+approximate_neck, fitted_model = train_model.create_and_train_model(dataset, ankle)
 
 # graph of a result
-fitted_model = train_model.create_and_train_model(dataset, ankle)[1]
-graph.create_graph(dataset)
+graph.create_graph(dataset, fitted_model)
 
 # print a result
 print(f"If ankle have size {ankle['Ankle'][0]}, neck would be {round(approximate_neck[0], 2)}.")

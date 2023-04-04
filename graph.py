@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
-from train_model import *
 
 
-def create_graph(dataset):
-    plt.scatter(dataset,color='g')
+def create_graph(dataset, fitted_model):
+    plt.scatter(x=dataset['Ankle'], y=dataset['Neck'])
+    mymodel = fitted_model.params[1] * dataset['Ankle'] + fitted_model.params[0]
+    plt.plot(dataset['Ankle'], mymodel)
+    plt.show()
